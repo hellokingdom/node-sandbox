@@ -1,13 +1,48 @@
 {
-  "name": "node-sandbox",
-  "version": "1.0.0",
-  "description": "Simple Node Sandbox",
-  "main": "src/index.js",
+  "name": "vue-sis-template",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon src/index.js localhost 8080"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --mode production",
+    "dev-build": "vue-cli-service build --mode development",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "scribe-build": "yarn dev-build && node routes.js && yarn build",
+    "now": "npm run dev-build && now ./dist -A ../now.json",
+    "upload:dev": "yarn dev-build && cd dist && aws s3 cp ./ s3://dev.xxwmm.staticweb.planogram.gggggggggg/planogram/2019/sis/baking/ --cache-control \"max-age=10\" --recursive --profile aws-nonprod"
   },
-  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "puppeteer": "^1.10.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
   "devDependencies": {
-    "nodemon": "1.18.4"
+    "@morrisonsplc/vue-cli-plugin-sis-spa": "file:./@morrisonsplc/vue-cli-plugin-sis-spa",
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-eslint": "^3.0.1",
+    "@vue/cli-plugin-unit-jest": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "@vue/eslint-config-standard": "^3.0.4",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "express": "^4.16.4",
+    "husky": "^2.4.1",
+    "node-sass": "^4.9.0",
+    "prerender-spa-plugin": "^3.4.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "sass-loader": "^7.0.1",
+    "vue-svg-loader": "^0.12.0",
+    "vue-template-compiler": "^2.5.17"
   }
 }

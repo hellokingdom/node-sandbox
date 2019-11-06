@@ -1,0 +1,89 @@
+.o-sis-container {
+  background: #fff;
+  width: 100%;
+  font-family: $font;
+  font-size: 16px;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.o-sis-wrap {
+  width: 100%;
+  max-width: $maxContainerWidth;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: $gutters;
+}
+
+.o-sis-innerWrap {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  top: 0px;
+  padding-bottom: 30px;
+  @include tablet {
+    width: 84%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: -50px;
+}
+
+.o-sis-row {
+  width: calc(100% + 30px);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.o-sis-col {
+  padding: 10px;
+  @include tablet {
+    padding: 15px;
+    width: 100%;
+    // margin-left: 15px;
+    position: relative;
+    display: block;
+    min-height: 1px;
+    //Comment out below if you wish the 2 columns to align to be the same height with flex.
+    // align-self: flex-start;
+  }
+  &--full {
+    flex: 1 1 100%;
+  }
+  &--half {
+    flex: 1 1 160px;
+    @include tablet {
+      flex: 1 1 40%;
+    }
+  }
+  &--third {
+    flex: 1 1 160px;
+    @include tablet {
+      flex: 1 1 28%;
+    }
+  }
+  &--quarter {
+    flex: 1 1 160px;
+    @include tablet {
+      flex: 1 1 22%;
+    }
+  }
+  &--noTopPadding {
+    padding-top: 0px;
+  }
+  &--noBottomPadding {
+    padding-bottom: 0px;
+  }
+}

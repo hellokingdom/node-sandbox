@@ -1,0 +1,28 @@
+// reset
+
+.scbFreeHtml {
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.o-sis-container *,
+.o-sis-container *:after,
+.o-sis-container *:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.o-sis-container {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin: 0;
+  }
+}

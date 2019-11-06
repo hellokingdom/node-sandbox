@@ -1,0 +1,179 @@
+.c-sis-box {
+  display: flex;
+  flex-direction: column;
+  // position: relative;
+  // cursor: pointer;
+  //padding: 15px;
+  border-radius: 3px;
+  text-align: left;
+  text-decoration: none;
+  color: $navLinksColourActive;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  height: 100%;
+  @include tablet {
+    // box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  &-cover {
+    display: block;
+    width: 100%;
+    border: none;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    z-index: 0;
+    min-height: 160px;
+    @include tablet {
+      min-height: unset;
+    }
+    &-image {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 160px;
+      max-width: none;
+      border: none;
+      transition: all 0.25s linear;
+      @include tablet {
+        position: static;
+        top: 0%;
+        left: 0%;
+        transform: none;
+        min-height: unset;
+        min-width: unset;
+        width: 100%;
+      }
+    }
+  }
+  &-label {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    transition: all 0.25s linear;
+    padding: 14px 34px 14px 14px;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    background-color: $navLinksColour;
+    font-size: 1em;
+    @include desktop {
+      font-size: 20px;
+    }
+    /* &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 14px;
+            display: block;
+            width: 1.2em;
+            height: 100%;
+            background: url(../images/ic_arrow_forward.svg) no-repeat center;
+            background-size: 1.2em;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0px) scale(1, 1);
+            transition: transform 400ms ease;
+        }*/
+  }
+  &:hover {
+    @include tablet {
+      // box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s linear;
+      text-decoration: none;
+      background-color: $navLinksColourActive;
+    }
+    .c-sis-box-cover {
+      &-image {
+        @include tablet {
+          transform: scale(1.1);
+          opacity: 0.9;
+        }
+      }
+    }
+    .c-sis-box-label {
+      @include tablet {
+        background-color: $navLinksColourActive;
+        color: $navLinksColour;
+        text-decoration: none;
+      }
+      &:after {
+        @include tablet {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+.c-sis-box-alternative {
+  background-color: $navLinksColour;
+  background: linear-gradient(to bottom right, #e9e685, $navLinksColour);
+  text-align: center;
+  color: $navLinksColour;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &-title {
+    &-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      border: 0px;
+      margin: 15% auto 0 auto;
+    }
+    &-subtle {
+      display: block;
+      width: 90%;
+      font-size: 0.9em;
+      margin: 5% auto 10% auto;
+      @include desktop {
+        font-size: 1em;
+      }
+    }
+    &-heading {
+      display: block;
+      width: 90%;
+      font-size: 0.9em;
+      margin: 0 auto 5% auto;
+      @include tablet {
+        font-size: 1.05em;
+      }
+      @include desktop {
+        font-size: 1.5em;
+      }
+      @include desktopWide {
+        font-size: 1.9em;
+      }
+    }
+  }
+  &-btn {
+    display: block;
+    color: $navLinksColour;
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 10px;
+    width: 84%;
+    margin: 0 auto 8% auto;
+    transition: all 0.25s linear;
+    @include desktop {
+      width: 90%;
+      margin: 0 auto 10% auto;
+      padding: 14px;
+      font-size: 1em;
+    }
+  }
+  &:hover {
+    text-decoration: none;
+    & .c-sis-box-alternative-btn {
+      color: #ffffff;
+      background-color: $navLinksColour;
+      text-decoration: none;
+    }
+  }
+}

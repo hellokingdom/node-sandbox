@@ -1,0 +1,36 @@
+//Media queries
+@mixin mobile-only{
+    @media (max-width: #{$tabletWidth - 1}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tabletWidth}) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media (min-width: #{$tabletWidth}) and (max-width: #{$desktopWidth - 1}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktopWidth}) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media (min-width: #{$desktopWidth}) and (max-width: #{$desktopWideWidth - 1}) {
+        @content;
+    }
+}
+
+@mixin desktopWide {
+    @media (min-width: #{$desktopWideWidth}) {
+        @content;
+    }
+}

@@ -1,0 +1,74 @@
+.c-sis-nav {
+  display: none;
+  @include tablet {
+    display: flex;
+  }
+  position: relative;
+  width: 97%;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 2%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  background-color: $subNavLinksColour;
+  border-radius: 3px;
+  z-index: 1;
+  margin-bottom: -30px;
+  font-weight: 600;
+  &__item {
+    display: block;
+    position: relative;
+    flex: 1 1 auto;
+    a {
+      color: $navLinksColour;
+      background-color: $subNavLinksColour;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 8px;
+      text-decoration: none;
+      transition: color 300ms ease;
+
+      width: 100%;
+      height: 100%;
+      font-size: 0.8em;
+      @include tablet {
+        font-size: 0.85em;
+      }
+      @include desktop {
+        font-size: 1em;
+      }
+      &:hover {
+        color: $navLinksColourActive;
+        background-color: $navLinksColour;
+      }
+    }
+    &--icon {
+      display: flex;
+      align-content: center;
+      img {
+        display: block;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__item.active a {
+    color: $navLinksColourActive;
+    background-color: $navLinksColour;
+    cursor: default;
+  }
+  &-subpage {
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
+// Turns off the hover rollover colour for the home icon
+.c-sis-nav__item--icon:hover a {
+  background-color: #ffffff;
+}

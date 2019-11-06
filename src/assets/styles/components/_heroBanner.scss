@@ -1,0 +1,14 @@
+.c-sis-heroBanner {
+  background-color: #cccccc;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+
+  &__bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+}

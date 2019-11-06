@@ -1,0 +1,16 @@
+{
+  "name": "@morrisonsplc/vue-cli-plugin-sis-spa",
+  "version": "1.0.0",
+  "description": "Add SPA to Pre-Render SIS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/morrisonsplc_pl/sis-vue-spa-plugin.git"
+  },
+  "author": "James Hyatt",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/morrisonsplc_pl/sis-vue-spa-plugin#readme"
+}
